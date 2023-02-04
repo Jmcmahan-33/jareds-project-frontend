@@ -3,11 +3,9 @@ import './App.css';
 
 function App() {
 
- //Final Repo test
- //note 
- //note again 
+  // final repo test 
 
-// fetch note 
+
   fetch("http://localhost:9292/tests")
   .then((r) => r.json())
   .then((data) => console.log(data))
