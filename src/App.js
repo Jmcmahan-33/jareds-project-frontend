@@ -7,6 +7,7 @@ function App() {
  //note 
  //note again 
 
+// fetch note 
   fetch("http://localhost:9292/tests")
   .then((r) => r.json())
   .then((data) => console.log(data))
