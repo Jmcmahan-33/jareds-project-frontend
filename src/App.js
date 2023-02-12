@@ -1,6 +1,7 @@
 
 import './App.css';
 import Header from './Header';
+import LessonContainer from './LessonContainer';
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
   return (
     <div>
       <Header/>
+      <LessonContainer/>
     </div>
   );
 }
