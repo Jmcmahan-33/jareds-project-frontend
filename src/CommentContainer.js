@@ -1,11 +1,14 @@
+import CommentCard from "./CommentCard"
 function CommentContainer({comments}) {
 
     const itemComments = comments.map(comment => {
 
         return (
-            <div>
-                
-            </div>
+           <CommentCard
+           key={comment.id}
+           comment={comment}
+           />
+
         )
     })
 
