@@ -5,12 +5,20 @@ import TeacherContainer from './TeacherContainer';
 
 function App() {
   const [teachers, setTeachers] = useState([])
+  const [students, setStudents] = useState([])
 
 // Teachers fetch
 useEffect(()=> {
   fetch("http://localhost:9292/teachers")
   .then((response) => response.json())
   .then((data) => setTeachers(data))
+}, [])
+
+//Student Fetch 
+useEffect(()=> {
+  fetch("http://localhost:9292/students")
+  .then((response) => response.json())
+  .then((data) => setStudents(data))
 }, [])
   
 

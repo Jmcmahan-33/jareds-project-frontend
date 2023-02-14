@@ -6,7 +6,7 @@ function TeacherCard({teacher}) {
         <div>
             <h4>{teacher.name}</h4>
             <p>{teacher.instrument}</p>
-            <p>{teacher.availability}</p>
+            <p>Available:{teacher.availability}</p>
             <p>{teacher.rate}</p>
         </div>
 
