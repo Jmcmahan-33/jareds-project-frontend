@@ -1,7 +1,19 @@
-function CommentContainer() {
+function CommentContainer({comments}) {
+
+    const itemComments = comments.map(comment => {
+
+        return (
+            <div>
+                
+            </div>
+        )
+    })
 
     return (
-        <div>Hello from Comment Container</div>
+        <div>
+        <h2>COMMENTS</h2>
+        {itemComments}
+        </div>
     )
 }
 
