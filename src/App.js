@@ -32,12 +32,17 @@ useEffect(()=> {
   .then((data) => setComments(data))
 }, [])
 
+//Add Teacher with Post
+function handleAddComment(newComment) {
+  setComments([...comments, newComment])
+}
+
   return (
     <div>
       <Header/>
       <TeacherContainer teachers={teachers}/>
       <StudentContainer students={students}/>
-      <CommentContainer comments={comments}/>
+      <CommentContainer onAddComment={handleAddComment} comments={comments}/>
     </div>
   );
 }
