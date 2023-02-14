@@ -1,20 +1,19 @@
 import TeacherCard from "./TeacherCard"
-function TeacherContainer({teachers}) {
+function TeacherContainer({ teachers }) {
 
-//commit test
+    //commit test
     const teacherItem = teachers.map(teacher => {
         return (
             <TeacherCard
-            key={teacher.id}
-            teacher={teacher}
+                key={teacher.id}
+                teacher={teacher}
             />
         )
     })
 
-    return(
+    return (
         <div>
             {teacherItem}
-
         </div>
     )
 }

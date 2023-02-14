@@ -1,9 +1,15 @@
 
 
-function TeacherCard(){
+function TeacherCard({teacher}) {
 
-    return(
-        <h1>Hello</h1>
+    return (
+        <div>
+            <h4>{teacher.name}</h4>
+            <p>{teacher.instrument}</p>
+            <p>{teacher.availability}</p>
+            <p>{teacher.rate}</p>
+        </div>
+
     )
 
 }
