@@ -1,7 +1,12 @@
 function CommentCard({comment}) {
 
     return (
-        <p>{comment.body}</p>
+        <div>
+        <p>"{comment.body}"</p>
+        <p>{comment.student_id}</p>
+
+        </div>
+        
     )
 }
 

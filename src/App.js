@@ -42,7 +42,7 @@ function handleAddComment(newComment) {
       <Header/>
       <TeacherContainer teachers={teachers}/>
       <StudentContainer students={students}/>
-      <CommentContainer onAddComment={handleAddComment} comments={comments}/>
+      <CommentContainer id={students.id} onAddComment={handleAddComment} comments={comments}/>
     </div>
   );
 }
