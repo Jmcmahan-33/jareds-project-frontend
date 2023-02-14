@@ -1,6 +1,6 @@
 import CommentCard from "./CommentCard"
 import NewComment from "./NewComment"
-function CommentContainer({comments}) {
+function CommentContainer({comments, onAddComment}) {
 
     const itemComments = comments.map(comment => {
 
@@ -17,7 +17,7 @@ function CommentContainer({comments}) {
         <div>
         <h2>COMMENTS</h2>
         {itemComments}
-        <NewComment/>
+        <NewComment onAddComment={onAddComment}/>
         </div>
     )
 }
