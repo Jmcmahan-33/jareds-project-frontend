@@ -3,10 +3,12 @@ import './App.css';
 import Header from './Header';
 import TeacherContainer from './TeacherContainer';
 import StudentContainer from './StudentContainer';
+import CommentContainer from './CommentContainer';
 
 function App() {
   const [teachers, setTeachers] = useState([])
   const [students, setStudents] = useState([])
+  const [comments, setComments] = useState([])
 
 // Teachers fetch
 useEffect(()=> {
@@ -23,18 +25,19 @@ useEffect(()=> {
 }, [])
   
 
-
-
-// fetch("http://localhost:9292/teachers")
-  // .then((r) => r.json())
-  // .then((data) => console.log(data))
-
+//Comment Fetch
+useEffect(()=> {
+  fetch("http://localhost:9292/comments")
+  .then((response) => response.json())
+  .then((data) => setComments(data))
+}, [])
 
   return (
     <div>
       <Header/>
       <TeacherContainer teachers={teachers}/>
       <StudentContainer students={students}/>
+      <CommentContainer comments={comments}/>
     </div>
   );
 }
