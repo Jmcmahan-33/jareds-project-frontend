@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import './App.css';
 import Header from './Header';
 import TeacherContainer from './TeacherContainer';
+import StudentContainer from './StudentContainer';
 
 function App() {
   const [teachers, setTeachers] = useState([])
@@ -33,6 +34,7 @@ useEffect(()=> {
     <div>
       <Header/>
       <TeacherContainer teachers={teachers}/>
+      <StudentContainer students={students}/>
     </div>
   );
 }

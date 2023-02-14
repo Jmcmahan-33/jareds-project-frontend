@@ -13,6 +13,7 @@ function TeacherContainer({ teachers }) {
 
     return (
         <div>
+            <h2>TEACHERS</h2>
             {teacherItem}
         </div>
     )
