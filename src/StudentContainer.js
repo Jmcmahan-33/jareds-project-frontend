@@ -1,18 +1,20 @@
-function StudentContainer({students}) {
+import StudentCard from "./StudentCard"
+
+function StudentContainer({ students }) {
     const studentItems = students.map(student => {
 
         return (
-            <div></div>
+           <StudentCard/>
         )
     })
 
-    return(
+    return (
         <div>
 
-                <h1>Hello from Student Container</h1>
-                <h2>{studentItems}</h2>
+            <h2>STUDENTS</h2>
+            {studentItems}
 
-    
+
         </div>
 
     )
