@@ -6,6 +6,7 @@ import TeacherContainer from './TeacherContainer';
 function App() {
   const [teachers, setTeachers] = useState([])
 
+// Teachers fetch
 useEffect(()=> {
   fetch("http://localhost:9292/teachers")
   .then((response) => response.json())
@@ -23,7 +24,7 @@ useEffect(()=> {
   return (
     <div>
       <Header/>
-      <TeacherContainer/>
+      <TeacherContainer teachers={teachers}/>
     </div>
   );
 }
