@@ -1,7 +1,11 @@
-function StudentCard(){
+function StudentCard({student}){
 
     return (
-        <h1>hello</h1>
+        <div>
+            <h4>{student.name}</h4>
+            <p>{student.instrument}</p>
+            <p>{student.teacher_id}</p>
+        </div>
     )
 }
 

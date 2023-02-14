@@ -4,19 +4,18 @@ function StudentContainer({ students }) {
     const studentItems = students.map(student => {
 
         return (
-           <StudentCard/>
+            <StudentCard
+                key={student.id}
+                student={student}
+            />
         )
     })
 
     return (
         <div>
-
             <h2>STUDENTS</h2>
             {studentItems}
-
-
         </div>
-
     )
 }
 
