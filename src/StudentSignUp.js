@@ -34,7 +34,10 @@ function StudentSignUp({ teachers, onAddStudents }) {
                 setSignUp("")
             })
     }
-    const optionsList = teachers.map(teacher => <option value={teacher.id}>{teacher.name}</option>)
+    const optionsList = teachers.map(teacher =>
+            <option key={teacher.id} value={teacher.id}>{teacher.name}</option>
+    )
+
     return (
         <div>
             <h2>Student Form</h2>
