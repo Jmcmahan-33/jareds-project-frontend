@@ -3,12 +3,12 @@ import './App.css';
 import Header from './Header';
 import TeacherContainer from './TeacherContainer';
 import StudentContainer from './StudentContainer';
-import CommentContainer from './CommentContainer';
+// import CommentContainer from './CommentContainer';
 
 function App() {
   const [teachers, setTeachers] = useState([])
   const [students, setStudents] = useState([])
-  const [comments, setComments] = useState([])
+  // const [comments, setComments] = useState([])
 
 // Teachers fetch
 useEffect(()=> {
@@ -26,23 +26,23 @@ useEffect(()=> {
   
 
 //Comment Fetch
-useEffect(()=> {
-  fetch("http://localhost:9292/comments")
-  .then((response) => response.json())
-  .then((data) => setComments(data))
-}, [])
+// useEffect(()=> {
+//   fetch("http://localhost:9292/comments")
+//   .then((response) => response.json())
+//   .then((data) => setComments(data))
+// }, [])
 
 //Add Teacher with Post
-function handleAddComment(newComment) {
-  setComments([...comments, newComment])
-}
+// function handleAddComment(newComment) {
+//   setComments([...comments, newComment])
+// }
 
   return (
     <div>
       <Header/>
       <TeacherContainer teachers={teachers}/>
       <StudentContainer students={students}/>
-      <CommentContainer id={students.id} onAddComment={handleAddComment} comments={comments}/>
+      {/* <CommentContainer id={students.id} onAddComment={handleAddComment} comments={comments}/> */}
     </div>
   );
 }

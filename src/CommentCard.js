@@ -1,13 +1,13 @@
-function CommentCard({comment}) {
+// function CommentCard({comment}) {
 
-    return (
-        <div>
-        <p>"{comment.body}"</p>
-        <p>{comment.student_id}</p>
+//     return (
+//         <div>
+//         <p>"{comment.body}"</p>
+//         <p>{comment.student_id}</p>
 
-        </div>
+//         </div>
         
-    )
-}
+//     )
+// }
 
-export default CommentCard
+// export default CommentCard
