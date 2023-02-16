@@ -1,5 +1,5 @@
 import TeacherCard from "./TeacherCard"
-function TeacherContainer({ teachers }) {
+function TeacherList({ teachers }) {
 
     //commit test
     const teacherItem = teachers.map(teacher => {
@@ -19,4 +19,4 @@ function TeacherContainer({ teachers }) {
     )
 }
 
-export default TeacherContainer
+export default TeacherList

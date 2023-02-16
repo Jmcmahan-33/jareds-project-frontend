@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import './App.css';
 import Header from './Header';
-import TeacherContainer from './TeacherContainer';
-import StudentContainer from './StudentContainer';
+import TeacherList from './TeacherList';
+import StudentList from './StudentList';
 import StudentSignUp from './StudentSignUp';
 // import CommentContainer from './CommentContainer';
 
@@ -24,6 +24,10 @@ useEffect(()=> {
   .then((response) => response.json())
   .then((data) => setStudents(data))
 }, [])
+
+function handleAddStudent(newStudent) {
+  setStudents([...students, newStudent]);
+}
   
 
 //Comment Fetch
@@ -41,9 +45,9 @@ useEffect(()=> {
   return (
     <div>
       <Header/>
-      <TeacherContainer teachers={teachers}/>
-      <StudentContainer students={students}/>
-      <StudentSignUp/>
+      <TeacherList teachers={teachers}/>
+      <StudentList students={students}/>
+      <StudentSignUp onAddStudents={handleAddStudent}/>
       {/* <CommentContainer id={students.id} onAddComment={handleAddComment} comments={comments}/> */}
     </div>
   );

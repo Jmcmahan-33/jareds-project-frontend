@@ -1,6 +1,6 @@
 import StudentCard from "./StudentCard"
 
-function StudentContainer({ students }) {
+function StudentList({ students }) {
     const studentItems = students.map(student => {
 
         return (
@@ -19,4 +19,4 @@ function StudentContainer({ students }) {
     )
 }
 
-export default StudentContainer
+export default StudentList
