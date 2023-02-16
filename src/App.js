@@ -3,6 +3,7 @@ import './App.css';
 import Header from './Header';
 import TeacherContainer from './TeacherContainer';
 import StudentContainer from './StudentContainer';
+import StudentSignUp from './StudentSignUp';
 // import CommentContainer from './CommentContainer';
 
 function App() {
@@ -42,6 +43,7 @@ useEffect(()=> {
       <Header/>
       <TeacherContainer teachers={teachers}/>
       <StudentContainer students={students}/>
+      <StudentSignUp/>
       {/* <CommentContainer id={students.id} onAddComment={handleAddComment} comments={comments}/> */}
     </div>
   );
