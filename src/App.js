@@ -47,7 +47,7 @@ function handleAddStudent(newStudent) {
       <Header/>
       <TeacherList teachers={teachers}/>
       <StudentList students={students}/>
-      <StudentSignUp onAddStudents={handleAddStudent}/>
+      <StudentSignUp teachers={teachers} onAddStudents={handleAddStudent}/>
       {/* <CommentContainer id={students.id} onAddComment={handleAddComment} comments={comments}/> */}
     </div>
   );
