@@ -28,6 +28,18 @@ useEffect(()=> {
 function handleAddStudent(newStudent) {
   setStudents([...students, newStudent]);
 }
+
+function handleUpdateStudent(updatedStudent) {
+  const updatedStudents = students.map((student) => {
+    if (student.id === updatedStudent.id) {
+      return updatedStudent;
+    } else {
+      return student;
+    }
+  });
+  setStudents(updatedStudents);
+}
+
   
 
 //Comment Fetch
@@ -46,7 +58,7 @@ function handleAddStudent(newStudent) {
     <div>
       <Header/>
       <TeacherList teachers={teachers}/>
-      <StudentList students={students}/>
+      <StudentList onUpdateStudent={handleUpdateStudent} students={students}/>
       <StudentSignUp teachers={teachers} onAddStudents={handleAddStudent}/>
       {/* <CommentContainer id={students.id} onAddComment={handleAddComment} comments={comments}/> */}
     </div>
