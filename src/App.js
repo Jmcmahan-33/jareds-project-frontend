@@ -35,7 +35,7 @@ function App() {
     console.log("SHOW", name)
     setSelectedStudent({
       ...selectedStudent,
-      [name]: value
+      [name]: value,
     })
   }
   function handleEditStudent(updatedStudent) {
