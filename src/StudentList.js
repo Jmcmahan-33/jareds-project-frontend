@@ -1,13 +1,13 @@
 import StudentCard from "./StudentCard"
 
-function StudentList({ students, onUpdateStudent}) {
+function StudentList({ students, onSelectedStudent}) {
     const studentItems = students.map(student => {
 
         return (
             <StudentCard
                 key={student.id}
                 student={student}
-                onUpdateStudent={onUpdateStudent}
+                onSelectedStudent={onSelectedStudent}
             />
         )
     })
