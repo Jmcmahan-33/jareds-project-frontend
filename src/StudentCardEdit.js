@@ -6,10 +6,10 @@ function StudentCardEdit({ student, onEditStudent, onChangeForm }) {
     onChangeForm(e.target.name, e.target.value);
   }
 
-  // function handleRadioChange(event) {
-  //   console.log("INPUT", event.target.value )
-  //   onChangeForm(event.target.name,event.target.value);
-  // }
+  function handleDropDownChange(event) {
+    console.log("INPUT", event.target.value )
+    onChangeForm(event.target.name,event.target.value);
+  }
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -41,6 +41,17 @@ function StudentCardEdit({ student, onEditStudent, onChangeForm }) {
           value={student.name}
           onChange={handleInputChange}
         />
+        <select
+         name="instrument"
+         value={student.instrument}
+         onChange={handleDropDownChange}
+        >
+          <option option value="all">Choose Instrument</option>
+          <option option value="guitar">Guitar</option>
+          <option option value="piano" >Piano</option>
+          <option option value="vocals">Vocals</option>
+
+        </select>
         <button>Submit</button>
       </form>
     </div>

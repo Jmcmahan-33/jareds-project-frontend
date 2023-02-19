@@ -1,7 +1,7 @@
 
 
 function TeacherCard({teacher}) {
-
+    
     return (
         <div>
             <h4>{teacher.name}</h4>
