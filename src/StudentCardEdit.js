@@ -6,9 +6,10 @@ function StudentCardEdit({ student, onEditStudent, onChangeForm }) {
     onChangeForm(e.target.name, e.target.value);
   }
 
-  function handleRadioChange(event) {
-    onChangeForm(event.target.name, event.target.value);
-  }
+  // function handleRadioChange(event) {
+  //   console.log("INPUT", event.target.value )
+  //   onChangeForm(event.target.name,event.target.value);
+  // }
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -32,6 +33,7 @@ function StudentCardEdit({ student, onEditStudent, onChangeForm }) {
     <div>
       <h2>Instrument Change</h2>
       <form onSubmit={handleSubmit}>
+        Name:
         <input
           type="text"
           name="name"
@@ -39,27 +41,6 @@ function StudentCardEdit({ student, onEditStudent, onChangeForm }) {
           value={student.name}
           onChange={handleInputChange}
         />
-        <input
-          type="radio"
-          name="guitar"
-          value={student.instrument}
-          onChange={handleRadioChange}
-        />
-        Guitar
-        <input
-          type="radio"
-          name="piano"
-          value={student.instrument}
-          onChange={handleRadioChange}
-        />
-        Piano
-        <input
-          type="radio"
-          name="vocals"
-          value={student.instrument}
-          onChange={handleRadioChange}
-        />
-        Vocals
         <button>Submit</button>
       </form>
     </div>

@@ -31,12 +31,10 @@ function App() {
     setStudents([...students, newStudent]);
   }
   //Update Student 
-  function handleChangeForm(name, value) {
-    console.log("SHOW", value)
+  function handleChangeForm(name,value) {
     setSelectedStudent({
       ...selectedStudent,
       [name]: value,
-      // [instrument]: value,
     })
   }
   function handleEditStudent(updatedStudent) {
