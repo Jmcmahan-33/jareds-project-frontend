@@ -32,10 +32,11 @@ function App() {
   }
   //Update Student 
   function handleChangeForm(name, value) {
-    console.log("SHOW", name)
+    console.log("SHOW", value)
     setSelectedStudent({
       ...selectedStudent,
       [name]: value,
+      // [instrument]: value,
     })
   }
   function handleEditStudent(updatedStudent) {
