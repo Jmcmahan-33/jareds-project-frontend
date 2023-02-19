@@ -1,6 +1,6 @@
 import StudentCard from "./StudentCard"
 
-function StudentList({ students, onSelectedStudent}) {
+function StudentList({ students, onSelectedStudent, onDeleteStudent}) {
     const studentItems = students.map(student => {
 
         return (
@@ -8,6 +8,7 @@ function StudentList({ students, onSelectedStudent}) {
                 key={student.id}
                 student={student}
                 onSelectedStudent={onSelectedStudent}
+                onDeleteStudent={onDeleteStudent}
             />
         )
     })

@@ -51,6 +51,13 @@ function App() {
   }
 
 
+  //DELETE STUDENT 
+  function handleDeletStudent(id) {
+    const updatedStudents = students.filter((student) => student.id !== id);
+    setStudents(updatedStudents);
+  }
+
+
 
 
   return (
@@ -58,7 +65,7 @@ function App() {
       <Header />
       <TeacherHire teachers={teachers} onAddTeacher={handleAddTeacher}/>
       <TeacherList teachers={teachers} />
-      <StudentList students={students} onSelectedStudent={setSelectedStudent} />
+      <StudentList students={students} onSelectedStudent={setSelectedStudent} onDeleteStudent={handleDeletStudent} />
       <StudentCardEdit
         student={selectedStudent}
         onEditStudent={handleEditStudent}
