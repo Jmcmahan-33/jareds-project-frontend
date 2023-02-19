@@ -5,6 +5,7 @@ import TeacherList from './TeacherList';
 import StudentList from './StudentList';
 import StudentSignUp from './StudentSignUp';
 import StudentCardEdit from './StudentCardEdit';
+import TeacherHire from './TeacherHire';
 // import CommentContainer from './CommentContainer';
 
 function App() {
@@ -19,6 +20,11 @@ function App() {
       .then((response) => response.json())
       .then((data) => setTeachers(data))
   }, [])
+
+  //Post Teacher 
+  function handleAddTeacher(newTeacher) {
+    setTeachers([...teachers, newTeacher]);
+  }
 
   //Student Fetch 
   useEffect(() => {
@@ -50,6 +56,7 @@ function App() {
   return (
     <div>
       <Header />
+      <TeacherHire teachers={teachers} onAddTeacher={handleAddTeacher}/>
       <TeacherList teachers={teachers} />
       <StudentList students={students} onSelectedStudent={setSelectedStudent} />
       <StudentCardEdit
