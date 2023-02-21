@@ -8,6 +8,8 @@ import StudentCardEdit from './StudentCardEdit';
 import TeacherHire from './TeacherHire';
 // import CommentContainer from './CommentContainer';
 
+
+//before table drop 
 function App() {
   const [teachers, setTeachers] = useState([])
   const [students, setStudents] = useState([])
@@ -49,6 +51,10 @@ function App() {
     setSelectedStudent(updatedStudent)
     setStudents(updatedStudents)
   }
+
+  // need first GET of Students to be fetched again 
+  // map through Student list in the fetch  
+  // .then(data=>setStudents(data.map))  
 
 
   //DELETE STUDENT 

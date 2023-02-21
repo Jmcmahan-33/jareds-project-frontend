@@ -6,10 +6,10 @@ function StudentCardEdit({ student, onEditStudent, onChangeForm }) {
     onChangeForm(e.target.name, e.target.value);
   }
 
-  function handleDropDownChange(event) {
-    console.log("INPUT", event.target.value )
-    onChangeForm(event.target.name,event.target.value);
-  }
+  // function handleDropDownChange(event) {
+  //   console.log("INPUT", event.target.value )
+  //   onChangeForm(event.target.name,event.target.value);
+  // }
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -18,7 +18,12 @@ function StudentCardEdit({ student, onEditStudent, onChangeForm }) {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(student),
+      body: JSON.stringify(
+        {
+          name: student.name,
+          instrument: student.instrument
+        }
+      ),
     })
       .then((r) => r.json())
       .then(onEditStudent);
@@ -26,8 +31,11 @@ function StudentCardEdit({ student, onEditStudent, onChangeForm }) {
 
   if (!student) return null;
 
+
+
   // grab student > instrument column value
   // update instrument using state 
+  //initial Get 
 
   return (
     <div>
@@ -44,9 +52,11 @@ function StudentCardEdit({ student, onEditStudent, onChangeForm }) {
         <select
          name="instrument"
          value={student.instrument}
-         onChange={handleDropDownChange}
+        // check on state managment 
+        // tiggers initial fetch to call everything again. 
+         onChange={handleInputChange}
         >
-          <option option value="all">Choose Instrument</option>
+          <option>Choose Instrument</option>
           <option option value="guitar">Guitar</option>
           <option option value="piano" >Piano</option>
           <option option value="vocals">Vocals</option>
