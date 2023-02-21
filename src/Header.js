@@ -5,7 +5,7 @@ function Header() {
   return (
     <header>
       <h1>
-        Music Lessons
+       J-Rock Music Lessons
       </h1>
     </header>
   );
