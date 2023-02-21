@@ -4,9 +4,10 @@ const linksStyle = {
     padding: "5px"
 }
 
+
 function Navbar() {
     return (
-        <div>
+        <div className="Nav">
             <NavLink
                 to="/"
                 exact
