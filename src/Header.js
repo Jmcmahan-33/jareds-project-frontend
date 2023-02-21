@@ -3,7 +3,7 @@ import React from "react";
 function Header() {
 
   return (
-    <header>
+    <header className="App-header">
       <h1>
        J-Rock Music Lessons
       </h1>

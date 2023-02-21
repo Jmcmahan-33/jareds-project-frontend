@@ -39,17 +39,19 @@ function StudentSignUp({ teachers, onAddStudents }) {
     )
 
     return (
-        <div>
+        <div className="form">
             <h2>Student Form</h2>
             <form onSubmit={handleSubmit}>
-                <div>
-                    <input
+                <div className="input">
+                <input
                         type="text"
                         name="name"
                         value={signUp.name}
                         onChange={handleChange}
                         placeholder="name"
                     />
+                </div>
+                <div className="input">
                     <input
                         type="text"
                         name="instrument"
@@ -58,7 +60,7 @@ function StudentSignUp({ teachers, onAddStudents }) {
                         placeholder="instrument"
                     />
                 </div>
-                <div>
+                <div className="input">
                     <select
                         name="teacher_id"
                         value={signUp.teacher_id}
@@ -68,9 +70,7 @@ function StudentSignUp({ teachers, onAddStudents }) {
                         {optionsList}
                     </select>
                 </div>
-                <div>
-                    <button type="submit">Sign Up</button>
-                </div>
+                    <button className="submit" type="submit">Sign Up</button>
             </form>
         </div>
     )

@@ -1,13 +1,19 @@
+import Paper from '@mui/material/Paper';
+import Grid from "@mui/material/Grid";
 
+function TeacherCard({ teacher }) {
 
-function TeacherCard({teacher}) {
-    
     return (
-        <div>
-            <h4>{teacher.name}</h4>
-            <p>Instruments: {teacher.musical_talents}</p>
-            <p>Rate: ${teacher.rate}</p>
-        </div>
+        <Grid item xs={3}>
+            <Paper elevation={3}>
+                <div>
+                    <h4>{teacher.name}</h4>
+                    <p>Instruments: {teacher.musical_talents}</p>
+                    <p>Rate: ${teacher.rate}</p>
+                </div>
+            </Paper>
+        </Grid>
+
 
     )
 
