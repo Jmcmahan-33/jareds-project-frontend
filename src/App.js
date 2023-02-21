@@ -1,3 +1,4 @@
+import { Route, Switch } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import './App.css';
 import Header from './Header';
@@ -6,7 +7,9 @@ import StudentList from './StudentList';
 import StudentSignUp from './StudentSignUp';
 import StudentCardEdit from './StudentCardEdit';
 import TeacherHire from './TeacherHire';
-// import CommentContainer from './CommentContainer';
+import Home from './Home';
+import Navbar from './NavBar';
+
 
 
 //before table drop 
@@ -14,7 +17,7 @@ function App() {
   const [teachers, setTeachers] = useState([])
   const [students, setStudents] = useState([])
   const [selectedStudent, setSelectedStudent] = useState(null)
-  // const [comments, setComments] = useState([])
+
 
   // Teachers fetch
   useEffect(() => {
@@ -39,7 +42,7 @@ function App() {
     setStudents([...students, newStudent]);
   }
   //Update Student 
-  function handleChangeForm(name,value) {
+  function handleChangeForm(name, value) {
     setSelectedStudent({
       ...selectedStudent,
       [name]: value,
@@ -69,14 +72,30 @@ function App() {
   return (
     <div>
       <Header />
-      <TeacherHire teachers={teachers} onAddTeacher={handleAddTeacher}/>
-      <TeacherList teachers={teachers} />
-      <StudentList students={students} onSelectedStudent={setSelectedStudent} onDeleteStudent={handleDeletStudent} />
+      <Navbar />
       <StudentCardEdit
         student={selectedStudent}
         onEditStudent={handleEditStudent}
         onChangeForm={handleChangeForm} />
-      <StudentSignUp teachers={teachers} onAddStudents={handleAddStudent} />
+      <Switch>
+        <Route path="/teachers">
+          <TeacherList teachers={teachers} />
+        </Route>
+        <Route path="/students">
+          <StudentList students={students} onSelectedStudent={setSelectedStudent} onDeleteStudent={handleDeletStudent} />
+        </Route>
+        <Route path="/teacher_hire">
+          <TeacherHire teachers={teachers} onAddTeacher={handleAddTeacher} />
+        </Route>
+        <Route path="/student_signup">
+          <StudentSignUp teachers={teachers} onAddStudents={handleAddStudent} />
+        </Route>
+        <Route exact path="/">
+          <Home />
+        </Route>
+      </Switch>
+
+
     </div>
   );
 }
