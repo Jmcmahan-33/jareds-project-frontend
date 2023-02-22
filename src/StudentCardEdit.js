@@ -1,9 +1,19 @@
+import { useState } from 'react';
+
 function StudentCardEdit({ student, onEditStudent, onChangeForm }) {
+  const [formData, setFormData] = useState({
+    name: "",
+    instrument: ""
+  })
+
+  console.log("CLICK", formData)
 
 
   function handleInputChange(e) {
-    console.log("CLICK", e.target.value)
-    onChangeForm(e.target.name, e.target.value);
+   
+    
+    // onChangeForm(e.target.name, e.target.value);
+    setFormData({[e.target.name]:e.target.value})
   }
 
   // function handleDropDownChange(event) {
@@ -20,8 +30,8 @@ function StudentCardEdit({ student, onEditStudent, onChangeForm }) {
       },
       body: JSON.stringify(
         {
-          name: student.name,
-          instrument: student.instrument
+          name: formData.name,
+          instrument: formData.instrument
         }
       ),
     })
@@ -46,12 +56,12 @@ function StudentCardEdit({ student, onEditStudent, onChangeForm }) {
           type="text"
           name="name"
           placeholder="Student Name"
-          value={student.name}
+          value={formData.name}
           onChange={handleInputChange}
         />
         <select
          name="instrument"
-         value={student.instrument}
+         value={formData.instrument}
         // check on state managment 
         // tiggers initial fetch to call everything again. 
          onChange={handleInputChange}
