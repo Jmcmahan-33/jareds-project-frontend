@@ -1,8 +1,18 @@
 import StudentCard from "./StudentCard"
 import Container from '@mui/material/Container';
 import Grid from "@mui/material/Grid";
+import { useEffect } from "react";
 
 function StudentList({ students, onSelectedStudent, onDeleteStudent }) {
+
+    useEffect(() => {
+        return() =>{
+            onSelectedStudent(null)
+        }
+     
+      }, [])
+
+    
 
     const studentItems = students.map(student => {
 
