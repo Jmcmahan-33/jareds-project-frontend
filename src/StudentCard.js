@@ -14,7 +14,7 @@ function StudentCard({student, onSelectedStudent, onDeleteStudent}) {
     }
 
     function handleDeleteClick() {
-        fetch(`http://localhost:9292/teachers/${student.id}`, {
+        fetch(`http://localhost:9292/students/${student.id}`, {
             method: "DELETE",
         });
         onDeleteStudent(student.id)
