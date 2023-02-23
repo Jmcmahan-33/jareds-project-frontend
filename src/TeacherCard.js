@@ -7,7 +7,7 @@ function TeacherCard({ teacher }) {
         <Grid item xs={3}>
             <Paper elevation={3}>
                 <div>
-                    <h4>{teacher.name}</h4>
+                    <h4 className='teacher-name'>{teacher.name}</h4>
                     <p>Instruments: {teacher.musical_talents}</p>
                     <p>Rate: ${teacher.rate}</p>
                 </div>

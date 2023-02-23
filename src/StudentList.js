@@ -1,9 +1,11 @@
 import StudentCard from "./StudentCard"
 import Container from '@mui/material/Container';
-import  Grid  from "@mui/material/Grid";
+import Grid from "@mui/material/Grid";
 
 function StudentList({ students, onSelectedStudent, onDeleteStudent }) {
+
     const studentItems = students.map(student => {
+
 
         return (
             <StudentCard
@@ -14,15 +16,16 @@ function StudentList({ students, onSelectedStudent, onDeleteStudent }) {
             />
         )
     })
-
+    console.log(studentItems)
     return (
         <div className="page-header">
+
             <h2>STUDENTS</h2>
             <Container>
                 <Grid container spacing={5}>
-                  {studentItems}  
+                    {studentItems}
                 </Grid>
-                
+
             </Container>
 
         </div>

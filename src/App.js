@@ -41,22 +41,23 @@ function App() {
   function handleAddStudent(newStudent) {
     setStudents([...students, newStudent]);
   }
-  //Update Student 
-  // function handleChangeForm(name, value) {
-  //   setSelectedStudent({
-  //     ...selectedStudent,
-  //     [name]: value,
-  //   })
-  // }
-  // function handleEditStudent(updatedStudent) {
-  //   console.log("STUDENTS", updatedStudent)
-  //   const updatedStudents = students.map(student => student.id === updatedStudent.id ? updatedStudent : student)
-  //   setSelectedStudent(updatedStudent)
-  //   setStudents(updatedStudents)
-  // }
-// put back in Student Edit component
-  // onEditStudent={handleEditStudent}
-  // onChangeForm={handleChangeForm}
+  // Update Student 
+  function handleChangeForm(name, value) {
+    setSelectedStudent({
+      ...selectedStudent,
+      [name]: value,
+    })
+  }
+  function handleEditStudent(updatedStudent) {
+    console.log("STUDENTS", updatedStudent)
+    const updatedStudents = students.map(student => student.id === updatedStudent.id ? updatedStudent : student)
+    setSelectedStudent(updatedStudent)
+    setStudents(updatedStudents)
+  }
+
+
+  // put back in Student Edit component
+
 
   // need first GET of Students to be fetched again 
   // map through Student list in the fetch  
@@ -78,12 +79,15 @@ function App() {
       <Navbar />
       <StudentCardEdit
         student={selectedStudent}
-        />
+        onEditStudent={handleEditStudent}
+        onChangeForm={handleChangeForm}
+      />
       <Switch>
         <Route path="/teachers">
           <TeacherList teachers={teachers} />
         </Route>
         <Route path="/students">
+          {/* put back in onSelectedStudent={setSelectedStudent}if need to */}
           <StudentList students={students} onSelectedStudent={setSelectedStudent} onDeleteStudent={handleDeletStudent} />
         </Route>
         <Route path="/teacher_hire">
