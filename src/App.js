@@ -25,12 +25,10 @@ function App() {
       .then((response) => response.json())
       .then((data) => setTeachers(data))
   }, [])
-
   //Post Teacher 
   function handleAddTeacher(newTeacher) {
     setTeachers([...teachers, newTeacher]);
   }
-
   //Student Fetch 
   useEffect(() => {
     fetch("http://localhost:9292/students")
@@ -54,25 +52,11 @@ function App() {
     setSelectedStudent(updatedStudent)
     setStudents(updatedStudents)
   }
-
-
-  // put back in Student Edit component
-
-
-  // need first GET of Students to be fetched again 
-  // map through Student list in the fetch  
-  // .then(data=>setStudents(data.map))  
-
-
   //DELETE STUDENT 
   function handleDeletStudent(id) {
     const updatedStudents = students.filter((student) => student.id !== id);
     setStudents(updatedStudents);
   }
-
-
-
-
   return (
     <div>
       <Header />

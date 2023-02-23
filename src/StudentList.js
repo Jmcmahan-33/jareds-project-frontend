@@ -12,11 +12,7 @@ function StudentList({ students, onSelectedStudent, onDeleteStudent }) {
      
       }, [])
 
-    
-
     const studentItems = students.map(student => {
-
-
         return (
             <StudentCard
                 key={student.id}
