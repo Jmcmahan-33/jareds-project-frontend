@@ -3,14 +3,15 @@ import React, { useState } from "react"
 const initialStudent = {
     name: "",
     instrument: "",
-    teacher_id: "",
+    teacher_id: 1,
 }
 
 const studentsUrl = "http://localhost:9292/students"
 
 function StudentSignUp({ teachers, onAddStudents }) {
+    
     const [signUp, setSignUp] = useState(initialStudent)
-
+    
     function handleChange(e) {
         setSignUp({
             ...signUp,
@@ -37,7 +38,7 @@ function StudentSignUp({ teachers, onAddStudents }) {
     const optionsList = teachers.map(teacher =>
             <option key={teacher.id} value={teacher.id}>{teacher.name}</option>
     )
-
+    console.log(signUp)
     return (
         <div className="form">
             <h2>Student Form</h2>
@@ -61,13 +62,14 @@ function StudentSignUp({ teachers, onAddStudents }) {
                     />
                 </div>
                 <div className="input">
+                    <label className="teacher-label">Find Teacher:</label>
+                    <br/>
                     <select
                         name="teacher_id"
                         value={signUp.teacher_id}
                         onChange={handleChange}
                     >
-                        <option value="All">Choose Teacher</option>
-                        {optionsList}
+                       {optionsList}
                     </select>
                 </div>
                     <button className="submit" type="submit">Sign Up</button>

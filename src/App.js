@@ -18,6 +18,8 @@ function App() {
   const [students, setStudents] = useState([])
   const [selectedStudent, setSelectedStudent] = useState(null)
 
+  console.log(selectedStudent)
+
 
   // Teachers fetch
   useEffect(() => {

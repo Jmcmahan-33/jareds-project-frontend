@@ -62,7 +62,7 @@ function StudentCardEdit({ student, onEditStudent, onChangeForm }) {
         // tiggers initial fetch to call everything again. 
          onChange={handleInputChange}
         >
-          <option>Choose Instrument</option>
+          {<option>Choose Instrument</option> ? "need teacher" : null}
           <option option value="guitar">Guitar</option>
           <option option value="piano" >Piano</option>
           <option option value="vocals">Vocals</option>

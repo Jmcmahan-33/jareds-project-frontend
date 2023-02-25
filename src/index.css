@@ -56,10 +56,9 @@
   border-radius: 12px;
   border: 0;
   box-sizing: border-box;
-  color: #eee;
-  font-size: 18px;
-  /* padding: 4px 20px 0; */
-  /* width: 100%; */
+  color: black;
+  padding: 4px 20px 0;
+  width: 100%;
 }
 
 .submit {
@@ -83,6 +82,13 @@
 }
 
 .teacher-name {
+  text-align: center;
+}
+
+.student-info {
+  text-align: center;
+}
+.teacher-info {
   text-align: center;
 }
 
