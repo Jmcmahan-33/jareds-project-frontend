@@ -43,5 +43,15 @@ Students (FULL CRUD)
 
 
 ## ToDo's  
-* 
+* More CSS work 
+* Route to display students when clicking on certain teacher ID 
+* Fix bugs 
+* Add a reviews/comments section 
+
+## Credit
+Patch work frontend:
+https://github.com/ihollander
+https://github.com/learn-co-curriculum/react-hooks-practice-pizza/tree/solution
+
+
 
