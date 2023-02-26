@@ -6,11 +6,11 @@ import { useEffect } from "react";
 function StudentList({ students, onSelectedStudent, onDeleteStudent }) {
 
     useEffect(() => {
-        return() =>{
+        return () => {
             onSelectedStudent(null)
         }
-     
-      }, [])
+
+    }, [])
 
     const studentItems = students.map(student => {
         return (
@@ -31,9 +31,7 @@ function StudentList({ students, onSelectedStudent, onDeleteStudent }) {
                 <Grid container spacing={5}>
                     {studentItems}
                 </Grid>
-
             </Container>
-
         </div>
     )
 }

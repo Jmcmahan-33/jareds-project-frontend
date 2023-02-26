@@ -4,7 +4,6 @@ const linksStyle = {
     padding: "5px"
 }
 
-
 function Navbar() {
     return (
         <div className="Nav">

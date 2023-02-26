@@ -1,18 +1,14 @@
-
 .App-header {
   background-color: #08d;
-  /* min-height: 100px; */
   display: flex;
   justify-content: center;
-  
+
 }
 
 .home {
   text-align: center;
   padding-top: 50px;
 }
-
-
 
 .home-img-container {
   display: flex;
@@ -22,9 +18,9 @@
 
 .home-img-container img {
   padding-left: 15px;
-  border-radius: 5px; 
+  border-radius: 5px;
   float: left;
-  width:  400px;
+  width: 400px;
   height: 400px;
   object-fit: cover;
 }
@@ -36,10 +32,7 @@
 
 .page-header h2 {
   text-align: center;
-  /* background-color: blue; */
-
 }
-
 
 .form {
   text-align: center;
@@ -88,7 +81,7 @@
 .student-info {
   text-align: center;
 }
+
 .teacher-info {
   text-align: center;
 }
-

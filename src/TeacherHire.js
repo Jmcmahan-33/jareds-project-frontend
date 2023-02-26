@@ -1,10 +1,5 @@
 import React, { useState } from "react"
-import Paper from '@mui/material/Paper';
-
-
-// Teacher Post
-//create form
-// 
+import { useHistory } from "react-router-dom";
 
 const initialTeacher = {
     name: "",
@@ -16,6 +11,7 @@ const teachersUrl = "http://localhost:9292/teachers"
 
 function TeacherHire({ onAddTeacher }) {
     const [hire, setHire] = useState(initialTeacher)
+    const history = useHistory()
 
 
     function handleChange(e) {
@@ -39,11 +35,9 @@ function TeacherHire({ onAddTeacher }) {
             .then(newTeacher => {
                 onAddTeacher(newTeacher)
                 setHire("")
+                history.push("/teachers")
             })
     }
-
-
-
     return (
         <div className="form">
             <h2>Teacher Hire</h2>
@@ -56,7 +50,6 @@ function TeacherHire({ onAddTeacher }) {
                         onChange={handleChange}
                         placeholder="name"
                     />
-
                 </div>
                 <div className="input">
                     <input
@@ -66,7 +59,6 @@ function TeacherHire({ onAddTeacher }) {
                         onChange={handleChange}
                         placeholder="Talents"
                     />
-
                 </div>
                 <div className="input">
                     <input

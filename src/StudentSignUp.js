@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import { useHistory } from "react-router-dom";
 
 const initialStudent = {
     name: "",
@@ -9,9 +10,9 @@ const initialStudent = {
 const studentsUrl = "http://localhost:9292/students"
 
 function StudentSignUp({ teachers, onAddStudents }) {
-    
     const [signUp, setSignUp] = useState(initialStudent)
-    
+    const history = useHistory()
+
     function handleChange(e) {
         setSignUp({
             ...signUp,
@@ -33,10 +34,11 @@ function StudentSignUp({ teachers, onAddStudents }) {
                 console.log("New Student", newStudent)
                 onAddStudents(newStudent)
                 setSignUp("")
+                history.push("/students")
             })
     }
     const optionsList = teachers.map(teacher =>
-            <option key={teacher.id} value={teacher.id}>{teacher.name}</option>
+        <option key={teacher.id} value={teacher.id}>{teacher.name}</option>
     )
     console.log(signUp)
     return (
@@ -44,7 +46,7 @@ function StudentSignUp({ teachers, onAddStudents }) {
             <h2>Student Form</h2>
             <form onSubmit={handleSubmit}>
                 <div className="input">
-                <input
+                    <input
                         type="text"
                         name="name"
                         value={signUp.name}
@@ -63,16 +65,16 @@ function StudentSignUp({ teachers, onAddStudents }) {
                 </div>
                 <div className="input">
                     <label className="teacher-label">Find Teacher:</label>
-                    <br/>
+                    <br />
                     <select
                         name="teacher_id"
                         value={signUp.teacher_id}
                         onChange={handleChange}
                     >
-                       {optionsList}
+                        {optionsList}
                     </select>
                 </div>
-                    <button className="submit" type="submit">Sign Up</button>
+                <button className="submit" type="submit">Sign Up</button>
             </form>
         </div>
     )

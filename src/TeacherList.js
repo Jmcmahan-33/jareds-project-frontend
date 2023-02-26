@@ -1,10 +1,9 @@
 import Container from '@mui/material/Container';
 import  Grid  from "@mui/material/Grid";
-
 import TeacherCard from "./TeacherCard"
+
 function TeacherList({ teachers }) {
 
-    //commit test
     const teacherItems = teachers.map(teacher => {
         return (
             <TeacherCard
@@ -13,7 +12,6 @@ function TeacherList({ teachers }) {
             />
         )
     })
-
     return (
         <div className='page-header'>
             <h2>TEACHERS</h2>
@@ -21,7 +19,6 @@ function TeacherList({ teachers }) {
                 <Grid container spacing={5}>
                   {teacherItems}  
                 </Grid>
-                
             </Container>
         </div>
     )

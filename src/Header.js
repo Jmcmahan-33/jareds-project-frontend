@@ -5,7 +5,7 @@ function Header() {
   return (
     <header className="App-header">
       <h1>
-       J-Rock Music Lessons
+        J-Rock Music Lessons
       </h1>
     </header>
   );

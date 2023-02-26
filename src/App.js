@@ -10,38 +10,31 @@ import TeacherHire from './TeacherHire';
 import Home from './Home';
 import Navbar from './NavBar';
 
-
-
-//before table drop 
 function App() {
   const [teachers, setTeachers] = useState([])
   const [students, setStudents] = useState([])
   const [selectedStudent, setSelectedStudent] = useState(null)
 
-  console.log(selectedStudent)
-
-
-  // Teachers fetch
   useEffect(() => {
     fetch("http://localhost:9292/teachers")
       .then((response) => response.json())
       .then((data) => setTeachers(data))
   }, [])
-  //Post Teacher 
+
   function handleAddTeacher(newTeacher) {
     setTeachers([...teachers, newTeacher]);
   }
-  //Student Fetch 
+
   useEffect(() => {
     fetch("http://localhost:9292/students")
       .then((response) => response.json())
       .then((data) => setStudents(data))
   }, [])
-  // Add Student 
+
   function handleAddStudent(newStudent) {
     setStudents([...students, newStudent]);
   }
-  // Update Student 
+
   function handleChangeForm(name, value) {
     setSelectedStudent({
       ...selectedStudent,
@@ -54,7 +47,7 @@ function App() {
     setSelectedStudent(updatedStudent)
     setStudents(updatedStudents)
   }
-  //DELETE STUDENT 
+
   function handleDeletStudent(id) {
     const updatedStudents = students.filter((student) => student.id !== id);
     setStudents(updatedStudents);
@@ -73,7 +66,6 @@ function App() {
           <TeacherList teachers={teachers} />
         </Route>
         <Route path="/students">
-          {/* put back in onSelectedStudent={setSelectedStudent}if need to */}
           <StudentList students={students} onSelectedStudent={setSelectedStudent} onDeleteStudent={handleDeletStudent} />
         </Route>
         <Route path="/teacher_hire">
@@ -86,8 +78,6 @@ function App() {
           <Home />
         </Route>
       </Switch>
-
-
     </div>
   );
 }

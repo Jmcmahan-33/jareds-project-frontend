@@ -8,14 +8,10 @@ function StudentCardEdit({ student, onEditStudent, onChangeForm }) {
 
   // console.log("CLICK", formData)
 
-
   function handleInputChange(e) {
-   
     onChangeForm(e.target.name, e.target.value);
     // setFormData({[e.target.name]:e.target.value})
   }
-
-
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -36,13 +32,6 @@ function StudentCardEdit({ student, onEditStudent, onChangeForm }) {
   }
 
   if (!student) return null;
-
-
-
-  // grab student > instrument column value
-  // update instrument using state 
-  //initial Get 
-
   return (
     <div className='change-form'>
       <h2>Student Update</h2>
@@ -58,15 +47,11 @@ function StudentCardEdit({ student, onEditStudent, onChangeForm }) {
         <select
          name="instrument"
          value={student.instrument}
-        // check on state managment 
-        // tiggers initial fetch to call everything again. 
          onChange={handleInputChange}
         >
-          {<option>Choose Instrument</option> ? "need teacher" : null}
           <option option value="guitar">Guitar</option>
           <option option value="piano" >Piano</option>
           <option option value="vocals">Vocals</option>
-
         </select>
         <button>Submit</button>
       </form>
