@@ -17,7 +17,7 @@
 }
 
 .home-img-container img {
-  padding-left: 15px;
+  padding: 15px;
   border-radius: 5px;
   float: left;
   width: 400px;
@@ -76,12 +76,50 @@
 
 .teacher-name {
   text-align: center;
+  text-decoration: underline;
 }
 
 .student-info {
   text-align: center;
+  padding: 5px;
+  padding-right: 2px;
+}
+.student-image {
+  max-width: 25%;
+  max-height: 100%;
 }
 
 .teacher-info {
+  padding: 5px;
   text-align: center;
+
+}
+
+.change-input {
+  padding: 2px;
+
+}
+
+.buttons {}
+
+.delete-btn {
+  text-align: right;
+  margin-left: 155px;
+  background-color: white;
+  border-radius: none;
+  border: white;
+}
+
+.teacher-image {
+  max-width: 25%;
+  max-height: 100%;
+}
+
+.home p {
+  padding: 4px;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: bold;
+  width: 600px;
+  margin: auto;
 }

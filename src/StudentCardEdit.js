@@ -1,4 +1,5 @@
 // import { useState } from 'react';
+import Button from '@mui/material/Button';
 
 function StudentCardEdit({ student, onEditStudent, onChangeForm }) {
   // const [formData, setFormData] = useState({
@@ -38,6 +39,7 @@ function StudentCardEdit({ student, onEditStudent, onChangeForm }) {
       <form onSubmit={handleSubmit}>
         Name:
         <input
+          className='change-input'
           type="text"
           name="name"
           placeholder="Student Name"
@@ -45,15 +47,16 @@ function StudentCardEdit({ student, onEditStudent, onChangeForm }) {
           onChange={handleInputChange}
         />
         <select
-         name="instrument"
-         value={student.instrument}
-         onChange={handleInputChange}
+          className='change-input'
+          name="instrument"
+          value={student.instrument}
+          onChange={handleInputChange}
         >
           <option option value="guitar">Guitar</option>
           <option option value="piano" >Piano</option>
           <option option value="vocals">Vocals</option>
         </select>
-        <button>Submit</button>
+        <Button variant="contained" type='submit'>Submit</Button>
       </form>
     </div>
   )

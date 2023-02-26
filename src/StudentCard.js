@@ -1,5 +1,11 @@
 import Paper from '@mui/material/Paper';
 import Grid from "@mui/material/Grid";
+import IconButton from '@mui/material/IconButton';
+import DeleteIcon from '@mui/icons-material/Delete';
+import Fab from '@mui/material/Fab';
+import EditIcon from '@mui/icons-material/Edit';
+
+
 
 function StudentCard({ student, onSelectedStudent, onDeleteStudent }) {
     const { name, instrument } = student
@@ -21,11 +27,19 @@ function StudentCard({ student, onSelectedStudent, onDeleteStudent }) {
             <Paper elevation={3}>
                 <div className='student-info'>
                     <h4 className='student-name'>{name}</h4>
-                    <p>find Avatar</p>
+                    <img  className='student-image' src={"https://cdn-icons-png.flaticon.com/512/9316/9316730.png"} alt={"student"}/>
                     <p>Instrument Choice: {instrument}</p>
                     <p>Assigned Teacher: {teacherName}</p>
-                    <button onClick={handleClick}>Edit Student</button>
-                    <button onClick={handleDeleteClick}>Delete Student</button>
+                    <div className="buttons" >
+                        <Fab onClick={handleClick} size="small" color="primary" aria-label="edit">
+                            <EditIcon />
+                        </Fab>
+                    </div>
+                    <div className='delete-btn'>
+                            <IconButton size='medium' onClick={handleDeleteClick} aria-label="delete">
+                                <DeleteIcon />
+                            </IconButton>
+                        </div>
                 </div>
             </Paper>
         </Grid>
