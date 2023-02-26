@@ -1,17 +1,11 @@
-// import { useState } from 'react';
+
 import Button from '@mui/material/Button';
 
 function StudentCardEdit({ student, onEditStudent, onChangeForm }) {
-  // const [formData, setFormData] = useState({
-  //   name: "",
-  //   instrument: ""
-  // })
 
-  // console.log("CLICK", formData)
 
   function handleInputChange(e) {
     onChangeForm(e.target.name, e.target.value);
-    // setFormData({[e.target.name]:e.target.value})
   }
 
   function handleSubmit(e) {
