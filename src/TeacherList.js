@@ -2,9 +2,11 @@ import Container from '@mui/material/Container';
 import  Grid  from "@mui/material/Grid";
 import TeacherCard from "./TeacherCard"
 
+
+
+
 function TeacherList({ teachers }) {
     
-
     const teacherItems = teachers.map(teacher => {
 
         return (

@@ -1,4 +1,4 @@
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, useRouteMatch } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import './App.css';
 import Header from './Header';
@@ -9,11 +9,16 @@ import StudentCardEdit from './StudentCardEdit';
 import TeacherHire from './TeacherHire';
 import Home from './Home';
 import Navbar from './NavBar';
+import TeacherLinks from './TeacherLinks';
+import ShowStudents from './ShowStudents';
+
 
 function App() {
   const [teachers, setTeachers] = useState([])
   const [students, setStudents] = useState([])
   const [selectedStudent, setSelectedStudent] = useState(null)
+  const match = useRouteMatch();
+
 
   useEffect(() => {
     fetch("http://localhost:9292/teachers")
@@ -64,6 +69,12 @@ function App() {
       <Switch>
         <Route path="/teachers">
           <TeacherList teachers={teachers} />
+        </Route>
+        <Route path="/teachers_students">
+          <TeacherLinks teachers={teachers} />
+        </Route>
+        <Route path={`${match.url}/:teacherId`}>
+          <ShowStudents teachers={teachers} />
         </Route>
         <Route path="/students">
           <StudentList students={students} onSelectedStudent={setSelectedStudent} onDeleteStudent={handleDeletStudent} />

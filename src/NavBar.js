@@ -22,6 +22,13 @@ function Navbar() {
                 Teachers
             </NavLink>
             <NavLink
+                to="/teachers_students"
+                exact
+                style={linksStyle}
+            >
+                Teacher Testing
+            </NavLink>
+            <NavLink
                 to="/students"
                 exact
                 style={linksStyle}
