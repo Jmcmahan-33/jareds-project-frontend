@@ -4,11 +4,7 @@ import Grid from "@mui/material/Grid";
 
 function TeacherCard({ teacher }) {
 
-    const studentList = teacher.students.map(studentName => {
-        return (
-            <option key={teacher.students.id} value={teacher.students.id}>{studentName.name}</option>
-        )
-    })
+  
    
     return (
         <Grid item xs={3}>
@@ -18,14 +14,6 @@ function TeacherCard({ teacher }) {
                     <img className='teacher-image' src={'https://cdn-icons-png.flaticon.com/512/2354/2354280.png'} alt={"teacher"} />
                     <p className='teacher-p'>Primary Instrument: {teacher.musical_talents}</p>
                     <p className='teacher-p'>Rate: ${teacher.rate}</p>
-                    <div className="input">
-                        <label>Students</label>
-                        <br />
-                        <select>
-                            {studentList}
-                        </select>
-                    </div>
-                    
                 </div>
             </Paper>
         </Grid>

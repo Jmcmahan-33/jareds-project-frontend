@@ -31,7 +31,6 @@ function StudentSignUp({ teachers, onAddStudents }) {
         })
             .then(response => response.json())
             .then(newStudent => {
-                console.log("New Student", newStudent)
                 onAddStudents(newStudent)
                 setSignUp("")
                 history.push("/students")

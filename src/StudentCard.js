@@ -12,7 +12,6 @@ function StudentCard({ student, onSelectedStudent, onDeleteStudent }) {
     const teacherName = student.teacher.name
 
     function handleClick() {
-        console.log("student", student)
         onSelectedStudent(student)
     }
 

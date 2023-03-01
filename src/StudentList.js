@@ -22,7 +22,6 @@ function StudentList({ students, onSelectedStudent, onDeleteStudent }) {
             />
         )
     })
-    console.log(studentItems)
     return (
         <div className="page-header">
 
